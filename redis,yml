@@ -1,1 +1,6 @@
-ags
+- name: install redis
+  hosts: localhost
+  become: yes
+  roles:
+    - redis
+    

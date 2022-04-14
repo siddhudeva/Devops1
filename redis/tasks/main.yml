@@ -7,7 +7,19 @@
     name: redis
     state: installed
 
-# - name: replacing BIndIP
-#   lineinfile: 
-#     path: /etc/red
+- name: copy file from templates
+  templates:
+    src: redis.conf
+    dest: /etc/redis.conf 
+
+- name: copy file from templates
+  templates:
+    src: redis.conf
+    dest: /etc/redis/redis.conf 
+
+- name: enabling and start the services
+  systemd:
+    name: redis
+    state: started
+    enable: yes
    

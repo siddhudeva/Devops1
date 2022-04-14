@@ -1,2 +1,13 @@
----
-# tasks file for redis
+- name: copy the repo file
+  copy:
+    src: redis.repo
+    dest: /etc/yum.repos.d/redis.repo
+- name: install redis
+  yum:
+    name: redis
+    state: installed
+
+# - name: replacing BIndIP
+#   lineinfile: 
+#     path: /etc/red
+   

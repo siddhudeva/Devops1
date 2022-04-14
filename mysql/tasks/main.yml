@@ -16,10 +16,25 @@
     state: started
     enabled: true
 
-- name: Simple select query to acme db
+- name: Check if new root password is working or not
   community.mysql.mysql_query:
     query: 'show databases'
     login_user: roboshop
     login_password: "{{MYSQL_PASS}}"
   register: out
   ignore_errors: true
+
+- name: Change the default password
+  when: out.failed | bool
+  block:
+    - name: Grab default password
+      ansible.builtin.shell: grep 'temporary password' /var/log/mysqld.log  | awk '{print $NF}'
+      register: mysql_default_password
+
+    - name: Copy SQL Script for Password reset
+      ansible.builtin.template:
+        src: root-pass-reset.sql
+        dest: /tmp/root-pass-reset.sql
+
+    - name: Change the Password
+      ansible.builtin.shell: mysql --connect-expired-password -uroot -p"{{mysql_default_password.stdout}}" </tmp/root-pass-reset.sql

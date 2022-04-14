@@ -16,3 +16,7 @@
     state: started
     enabled: true
 
+- name: Simple select query to acme db
+  community.mysql.mysql_query:
+    login_db: roboshop
+    query: 'show databases'

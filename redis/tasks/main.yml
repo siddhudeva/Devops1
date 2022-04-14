@@ -8,12 +8,12 @@
     state: installed
 
 - name: copy file from templates
-  templates:
+  template:
     src: redis.conf
     dest: /etc/redis.conf 
 
 - name: copy file from templates
-  templates:
+  template:
     src: redis.conf
     dest: /etc/redis/redis.conf 
 

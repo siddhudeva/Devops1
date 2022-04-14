@@ -18,5 +18,8 @@
 
 - name: Simple select query to acme db
   community.mysql.mysql_query:
-    login_db: roboshop
     query: 'show databases'
+    login_user: roboshop
+    login_password: "{{MYSQL_PASS}}"
+  register: out
+  ignore_errors: true

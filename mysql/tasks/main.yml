@@ -13,6 +13,6 @@
 - name: start mysql services
   systemd:
     name: mysqld
-    state: start
+    state: started
     enabled: true
 

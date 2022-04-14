@@ -8,7 +8,7 @@
     name: 
     - mysql-community-server
     - MySQL-python
-    state: installed
+    state: present
 
 - name: start mysql services
   systemd:

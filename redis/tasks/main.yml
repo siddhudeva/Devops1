@@ -17,9 +17,9 @@
     src: redis.conf
     dest: /etc/redis/redis.conf 
 
-- name: enabling and start the services
-  systemd:
+- name: Enable redis
+  ansible.builtin.systemd:
     name: redis
     state: started
-    enable: yes
+    enabled: yes
    

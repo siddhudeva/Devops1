@@ -4,7 +4,7 @@
 git branch | grep -w $1
 echo $?
 
-if [$? is -eq 0];
+if [$? -eq 0];
 then 
    this branch is already exists
 else

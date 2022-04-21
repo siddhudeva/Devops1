@@ -16,5 +16,5 @@ fi
 
 curl $url >>/tmp/gitversion.git
 echo 'list of stable releases from git were taken'
-cat /tmp/gitversion.txt |  
+cat /tmp/gitversion.txt
 

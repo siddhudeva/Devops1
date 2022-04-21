@@ -20,6 +20,7 @@ echo "***********************PLEASE ENTER REQUIRED VERSION TO INSTALL **********
 read -p "please enter version without "/" : " V
 echo "******************************DOWNLOADING $V VERISON******************************************"
 rm -f $V.war
+echo  "**************************REMOVING ANY OLD JENKINS FILES ************************************"
   which wget 1>/dev/null
   if [ $? -ne 0 ]
   then

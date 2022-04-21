@@ -27,7 +27,7 @@ then
   wget -O https://get.jenkins.io/war-stable/$V/jenkins.war 1>/dev/null 2>/dev/null
 
 else
-  wget -O https://get.jenkins.io/war-stable/$V/jenkins.war 1>/dev/null 2>/dev/null
+  wget -O https://get.jenkins.io/war-stable/$V/jenkins.war 
 fi
 
 echo "*****************************FILE IS DOWNLOADED *********************************************"

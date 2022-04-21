@@ -19,8 +19,7 @@ cat /tmp/jenkins.txt |sed -n '/[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}/p' | awk -F '"' 
 echo "***********************PLEASE ENTER REQUIRED VERSION TO INSTALL ******************************"
 read -p "please enter version without "/" : " V
 echo "******************************DOWNLOADING $V VERISON******************************************"
-if [ -e "$V.war" ]
-then
+rm -f $V.war
   which wget 1>/dev/null
   if [ $? -ne 0 ]
   then
@@ -30,9 +29,6 @@ then
   else
     wget https://get.jenkins.io/war-stable/$V/jenkins.war 
   fi
-else
-  rm -f $V.war
-  wget https://get.jenkins.io/war-stable/$V/jenkins.war 
-fi
+
 echo "*****************************FILE IS DOWNLOADED *********************************************"
 echo "THANKYOU"

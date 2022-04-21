@@ -14,7 +14,7 @@ then
   echo "removing old content from "
 fi
 
-curl $url >>/tmp/gitversion.git
+curl $url >>/tmp/gitversion.git 1>/dev/null 2</dev/null
 echo 'list of stable releases from git were taken'
 
 cat /tmp/gitversion.txt | grep "tar.gz" | sed '/manpages/d' | sed '/htmldocs/d' | sed '/core/d' | awk -F '"' '{print $2}' | cut -c 5- | awk -F '.tar.gz' '{print $1}'

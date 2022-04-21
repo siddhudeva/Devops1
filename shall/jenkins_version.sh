@@ -14,4 +14,21 @@ fi
 echo "CONNECTING TO JENKINS SERVER & LISTING ALL JENKINS VERSIONS"
 curl https://get.jenkins.io/war-stable/ >>/tmp/jenkins.txt
 
-cat /tmp/jenkins.txt 
+echo "*******************************LISTING OF ALL AVAILABLE VERSIONS******************************"
+cat /tmp/jenkins.txt |sed -n '/[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}/p' | awk -F '"' '{print $2}'
+echo "***********************PLEASE ENTER REQUIRED VERSION TO INSTALL ******************************"
+read -p "please enter version without "/" : " V
+echo "******************************DOWNLOADING $V VERISON******************************************"
+which java
+if [ $? -ne 0 ]
+then
+  echo "wget is not intalled, trying to install wget"
+  yum install wget -y 1>/dev/null 2>/dev/null
+  wget -O https://get.jenkins.io/war-stable/$V/jenkins.war 1>/dev/null 2>/dev/null
+
+else
+  wget -O https://get.jenkins.io/war-stable/$V/jenkins.war 1>/dev/null 2>/dev/null
+fi
+
+echo "*****************************FILE IS DOWNLOADED *********************************************"
+echo "THANKYOU"

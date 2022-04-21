@@ -2,7 +2,7 @@
 
 #this script is to download the required version of jenkins and try to install the version
 
-which java
+which java 1>/dev/null
 if [ $? -eq 0 ]
 then
   echo "java installed and continue to for forther steps"
@@ -12,14 +12,14 @@ else
 fi
 
 echo "CONNECTING TO JENKINS SERVER & LISTING ALL JENKINS VERSIONS"
-curl https://get.jenkins.io/war-stable/ >>/tmp/jenkins.txt
+curl https://get.jenkins.io/war-stable/ >>/tmp/jenkins.txt 1>/dev/null
 
 echo "*******************************LISTING OF ALL AVAILABLE VERSIONS******************************"
 cat /tmp/jenkins.txt |sed -n '/[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}/p' | awk -F '"' '{print $2}'
 echo "***********************PLEASE ENTER REQUIRED VERSION TO INSTALL ******************************"
 read -p "please enter version without "/" : " V
 echo "******************************DOWNLOADING $V VERISON******************************************"
-which java
+which wget 1>/dev/null
 if [ $? -ne 0 ]
 then
   echo "wget is not intalled, trying to install wget"

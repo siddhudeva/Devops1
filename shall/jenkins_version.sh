@@ -32,4 +32,6 @@ echo  "**************************REMOVING ANY OLD JENKINS FILES ****************
   fi
 
 echo "*****************************FILE IS DOWNLOADED *********************************************"
-echo "THANKYOU"
+echo "********************************   INSTALLING JENKINS  ***************************************"
+
+java -jar jenkins.war

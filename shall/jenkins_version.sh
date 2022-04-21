@@ -28,7 +28,7 @@ then
     yum install wget -y 1>/dev/null 2>/dev/null
     wget https://get.jenkins.io/war-stable/$V/jenkins.war 1>/dev/null 2>/dev/null
   else
-    wget https://get.jenkins.io/war-stable/$V/jenkins.war 1>/dev/null 2>/dev/null
+    wget https://get.jenkins.io/war-stable/$V/jenkins.war 
   fi
 else
   rm -f $V.war

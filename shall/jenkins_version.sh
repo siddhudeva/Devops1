@@ -19,16 +19,19 @@ cat /tmp/jenkins.txt |sed -n '/[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}/p' | awk -F '"' 
 echo "***********************PLEASE ENTER REQUIRED VERSION TO INSTALL ******************************"
 read -p "please enter version without "/" : " V
 echo "******************************DOWNLOADING $V VERISON******************************************"
-which wget 1>/dev/null
-if [ $? -ne 0 ]
+if [ -e "$V.war" ]
 then
-  echo "wget is not intalled, trying to install wget"
-  yum install wget -y 1>/dev/null 2>/dev/null
-  wget -O https://get.jenkins.io/war-stable/$V/jenkins.war 1>/dev/null 2>/dev/null
-
+  which wget 1>/dev/null
+  if [ $? -ne 0 ]
+  then
+    echo "wget is not intalled, trying to install wget"
+    yum install wget -y 1>/dev/null 2>/dev/null
+    wget https://get.jenkins.io/war-stable/$V/jenkins.war 1>/dev/null 2>/dev/null
+  else
+    wget https://get.jenkins.io/war-stable/$V/jenkins.war 1>/dev/null 2>/dev/null
+  fi
 else
-  wget -O https://get.jenkins.io/war-stable/$V/jenkins.war 
+  rm -f $V.war
 fi
-
 echo "*****************************FILE IS DOWNLOADED *********************************************"
 echo "THANKYOU"

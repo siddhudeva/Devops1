@@ -32,6 +32,7 @@ then
   fi
 else
   rm -f $V.war
+  wget https://get.jenkins.io/war-stable/$V/jenkins.war 
 fi
 echo "*****************************FILE IS DOWNLOADED *********************************************"
 echo "THANKYOU"

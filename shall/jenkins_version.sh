@@ -11,7 +11,7 @@ else
   echo "java isntallation is done"
 fi
 
-echo "CONNECTING TO JENKINS SERVER AND LISTING ALL JENKINS VERSIONS"
+echo "CONNECTING TO JENKINS SERVER & LISTING ALL JENKINS VERSIONS"
 curl https://get.jenkins.io/war-stable/ >>/tmp/jenkins.txt
 
 cat /tmp/jenkins.txt 

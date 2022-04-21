@@ -1,0 +1,25 @@
+- name: copy the repo file
+  copy:
+    src: redis.repo
+    dest: /etc/yum.repos.d/redis.repo
+- name: install redis
+  yum:
+    name: redis
+    state: installed
+
+- name: copy file from templates
+  template:
+    src: redis.conf
+    dest: /etc/redis.conf 
+
+- name: copy file from templates
+  template:
+    src: redis.conf
+    dest: /etc/redis/redis.conf 
+
+- name: enabling and start the services
+  systemd:
+    name: redis
+    state: started
+    enable: yes
+   

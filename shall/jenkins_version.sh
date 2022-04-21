@@ -15,7 +15,7 @@ echo "CONNECTING TO JENKINS SERVER & LISTING ALL JENKINS VERSIONS"
 curl https://get.jenkins.io/war-stable/ >>/tmp/jenkins.txt 1>/dev/null
 
 echo "*******************************LISTING OF ALL AVAILABLE VERSIONS******************************"
-cat /tmp/jenkins.txt |sed -n '/[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}/p' | awk -F '"' '{print $2}'
+cat /tmp/jenkins.txt |sed -n '/[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}/p' | awk -F '"' '{print $2}' | tr " " "\n" | sort 
 echo "***********************PLEASE ENTER REQUIRED VERSION TO INSTALL ******************************"
 read -p "please enter version without "/" : " V
 echo "******************************DOWNLOADING $V VERISON******************************************"

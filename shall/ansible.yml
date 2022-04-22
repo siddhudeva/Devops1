@@ -3,7 +3,7 @@
   tasks: 
     - name: repository for terraform
       yum_repository:
-        name: hashicorp.repo
+        name: hashicorp
         description: hashicorp.repo file
         baseurl: https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
         state: present

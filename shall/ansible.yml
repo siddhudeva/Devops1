@@ -9,7 +9,7 @@
     - name: repository for terraform
       yum_repository:
         name: hashicorp
-        description: hashicorp.repo file
+        description: hashicorp
         baseurl: https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
         state: present
 

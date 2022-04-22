@@ -15,5 +15,5 @@
 
     - name: terraform installation
       yum:
-        name: terraform -y
-        state: present
+        name: terraform 
+        state: installed

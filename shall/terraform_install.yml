@@ -5,10 +5,9 @@
   tasks: 
     - name: yum packages installation
       yum: 
-        name: "{{item}}"
+        name: wget
         state: latest
-        with_items:
-            - wget
+
     - name: terraform install
       unarchive: 
         src: https://releases.hashicorp.com/terraform/1.1.9/terraform_1.1.9_linux_amd64.zip

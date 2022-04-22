@@ -4,6 +4,7 @@
     - name: repository for terraform
       yum_repository:
         name: hashicrop.repo
+        description: hashicrop.repo file
         baseurl: https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
         state: present
 

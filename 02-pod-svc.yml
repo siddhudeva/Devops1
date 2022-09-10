@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample3
+  labels:
+    app: Myapp
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample3-svc
+spec:
+  selector:
+    app: Myapp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

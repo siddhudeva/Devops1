@@ -19,4 +19,4 @@ spec:
       image: centos:7
       command:
         - "sleep"
-        - 10000
+        - "10000"

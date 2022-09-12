@@ -50,11 +50,10 @@ kind: Service
 metadata:
   name: sample5-svc-np
 spec:
-  type: nodePort
+  type: NodePort
   selector:
     app: nginx
   ports:
-    = protocol: TCP
+    - protocol: TCP
       port: 80
       targetPort: 80
-      nodeport:30001

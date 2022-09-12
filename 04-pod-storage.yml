@@ -4,13 +4,13 @@ metadata:
   name: sample7
 spec:
   containers:
-    - image: nginx
-      name: nginx
-      volumeMounts:
-        - MountPath: /opt
-          name: hostpath-volume
+  - image: nginx
+    name: nginx
+    volumeMounts:
+    - MountPath: /opt
+      name: hostpath-volume
   volumes:
-    - name: hostpath-volume
-      hostPath:
-        path: /opt/opt-data
-        type: Directory
+  - name: hostpath-volume
+    hostPath:
+      path: /opt/opt-data
+      type: Directory

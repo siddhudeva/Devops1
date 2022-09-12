@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d403e8b1-33c4-42e0-903d-10496c9691d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/04-pod-storage.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-pod-storage.yml" beforeDir="false" afterPath="$PROJECT_DIR$/04-pod-storage.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

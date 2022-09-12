@@ -7,7 +7,7 @@ spec:
   - image: nginx
     name: nginx
     volumeMounts:
-    - MountPath: /opt
+    - mountPath: /opt
       name: hostpath-volume
   volumes:
   - name: hostpath-volume
